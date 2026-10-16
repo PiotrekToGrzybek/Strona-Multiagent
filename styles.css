@@ -708,7 +708,9 @@ body {
 select {
   min-height: 48px;
   max-width: 100%;
+  border-color: #65775b;
 }
+.menu { border-color: #65775b; }
 .button {
   white-space: normal;
   min-height: 44px;

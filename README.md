@@ -46,8 +46,8 @@ Przed publicznym uruchomieniem:
 
 To strona statyczna: nie wymaga Joomla, PHP, bazy danych ani Node.js na serwerze. Do publikacji wystarczą `index.html`, `prywatnosc.html`, `styles.css`, `app.js`, `config.js` oraz katalog `assets/`. Skonfiguruj HTTPS na docelowym hostingu. Nie publikuj narzędzi, plików Git ani sekretów. Włączenie nowej strony przy istniejącym `index.php` wymaga świadomego ustalenia pliku startowego na serwerze.
 
-Zgodnie z poleceniem właściciela ta praca jest przeznaczona wyłącznie do GitHuba. Nie dokonano zmian w FTP, cPanelu ani Joomla. Nie skonfigurowano automatycznego wdrażania.
+Podgląd jest publikowany na GitHub Pages przez `.github/workflows/pages.yml`. Publikowane są wyłącznie wskazane pliki strony i grafiki. Nie dokonano zmian w FTP, cPanelu ani Joomla.
 
 ## Dostępność i prywatność
 
-Nawigacja klawiaturą, widoczne zaznaczenie fokusu, odnośnik pomijania nawigacji, etykiety pól, natywne `dialog` i `details`, ograniczenie animacji oraz wynik listy ogłaszany przez `aria-live`. Brak cookies, localStorage, zewnętrznej analityki i przetwarzania danych osobowych przez formularz. Nie stanowi to audytu zgodności prawnej ani pełnego audytu WCAG.
+Cel techniczny: WCAG 2.2 AA. Nawigacja klawiaturą, kontrast, widoczny fokus, etykiety pól, nazwane okno i region wyniku otrzymujący fokus. Publiczna informacja znajduje się w `dostepnosc.html`, a wyniki kontroli w `VALIDATION.md` i `ACCESSIBILITY.md`. Brak cookies, localStorage i analityki. Nie stanowi to certyfikacji WCAG ani potwierdzenia zgodności całej usługi z EAA.

@@ -20,7 +20,7 @@ body {
   background: var(--paper);
   color: var(--ink);
   font:
-    16px/1.65 system-ui,
+    1rem/1.65 system-ui,
     sans-serif;
 }
 button,
@@ -38,8 +38,9 @@ summary {
   -webkit-tap-highlight-color: transparent;
 }
 :focus-visible {
-  outline: 3px solid #b2572a;
-  outline-offset: 5px;
+  outline: 3px solid #163c32;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px #fff;
 }
 button {
   cursor: pointer;
@@ -196,7 +197,7 @@ footer a:hover {
 h1 em {
   font-family: Georgia, serif;
   font-weight: 400;
-  color: #688058;
+  color: #526a43;
 }
 .lead {
   max-width: 450px;
@@ -330,6 +331,14 @@ h1 em {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  min-height: 44px;
+  padding: 8px 0;
+  background: transparent;
+  color: var(--ink);
+  border: 0;
+  text-align: left;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 .process {
   background: #edf1e7;
@@ -360,7 +369,7 @@ h1 em {
 .process li > span {
   font-family: Georgia, serif;
   font-size: 1.6rem;
-  color: #6b815e;
+  color: #526a43;
 }
 .process h3 {
   margin-bottom: 8px;
@@ -518,6 +527,8 @@ dialog li {
   background: none;
   font-size: 2rem;
   color: var(--ink);
+  min-width: 44px;
+  min-height: 44px;
 }
 .legal {
   max-width: 780px;
@@ -680,6 +691,100 @@ dialog li {
   }
   .button {
     transition: none;
+  }
+}
+
+/* Zachowanie przy powiększeniu, długich treściach i wymuszonych kolorach systemu. */
+.hero > *,
+.process-grid > *,
+.planner > *,
+.faq > *,
+.cards > * {
+  min-width: 0;
+}
+body {
+  overflow-wrap: anywhere;
+}
+select {
+  min-height: 48px;
+  max-width: 100%;
+}
+.button {
+  white-space: normal;
+  min-height: 44px;
+}
+.menu,
+summary,
+footer a,
+.text-link {
+  min-height: 44px;
+}
+footer a,
+.text-link {
+  display: inline-flex;
+  align-items: center;
+}
+summary {
+  padding-inline: 8px;
+}
+#contact-links {
+  flex-shrink: 1;
+  min-width: 0;
+}
+main:focus {
+  outline: none;
+}
+.card:focus-within {
+  background: #edf2e4;
+  border-color: var(--ink);
+}
+.card {
+  cursor: default;
+}
+.legal a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.art-label {
+  max-width: calc(100% - 24px);
+}
+dialog {
+  padding-top: 70px;
+}
+@media (max-width: 760px) {
+  .hero-art {
+    padding-bottom: 140px;
+  }
+  .art-label {
+    bottom: 40px;
+  }
+  .art-caption {
+    bottom: 4px;
+  }
+  header > .brand {
+    font-size: 1.4rem;
+  }
+  h1 {
+    font-size: clamp(2.5rem, 12vw, 5rem);
+  }
+  .contact {
+    padding: 24px;
+  }
+}
+@media (forced-colors: active) {
+  :focus-visible {
+    outline: 3px solid Highlight;
+    box-shadow: none;
+  }
+  .button,
+  .card,
+  select,
+  .menu,
+  dialog {
+    border: 1px solid ButtonText;
+  }
+  .card-link {
+    color: LinkText;
   }
 }
 

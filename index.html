@@ -36,12 +36,12 @@
         </a>
       </nav>
     </header>
-    <main id="main">
+    <main id="main" tabindex="-1">
       <noscript>
         <p class="wrap">
-          Włącz JavaScript, aby przeglądać szczegóły kategorii i przygotować listę pytań.
-          Tematy do rozmowy: samochód, dom i mieszkanie, życie i zdrowie, podróż,
-          firma oraz ubezpieczenia grupowe. Poradnik i odpowiedzi poniżej są dostępne bez JavaScriptu.
+          Włącz JavaScript, aby przeglądać szczegóły kategorii i przygotować listę pytań. Tematy do
+          rozmowy: samochód, dom i mieszkanie, życie i zdrowie, podróż, firma oraz ubezpieczenia
+          grupowe. Poradnik i odpowiedzi poniżej są dostępne bez JavaScriptu.
         </p>
       </noscript>
       <section class="hero wrap">
@@ -201,7 +201,13 @@
               Przygotuj listę pytań
               <span aria-hidden="true">↗</span>
             </button>
-            <div id="plan-result" tabindex="-1" hidden aria-live="polite"></div>
+            <div
+              id="plan-result"
+              role="region"
+              aria-labelledby="plan-heading"
+              tabindex="-1"
+              hidden
+            ></div>
           </form>
         </div>
       </section>
@@ -265,6 +271,7 @@
         </a>
         <p>Ochrona dopasowana do życia.</p>
         <a href="prywatnosc.html">Prywatność</a>
+        <a href="dostepnosc.html">Dostępność</a>
       </div>
       <div class="footer-bottom">
         <span>
@@ -276,7 +283,7 @@
         <a href="#">Wróć na górę ↑</a>
       </div>
     </footer>
-    <dialog id="offer-dialog">
+    <dialog id="offer-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description">
       <button class="close" aria-label="Zamknij szczegóły">×</button>
       <p class="eyebrow">Poznaj możliwości</p>
       <h2 id="dialog-title"></h2>

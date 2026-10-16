@@ -17,5 +17,8 @@ for (const match of html.matchAll(/(?:src|href)="([^"#]+)"/g)) {
 }
 
 assert.ok(html.includes('lang="pl"'), 'Brak języka dokumentu.');
-assert.ok(html.includes('aria-live="polite"'), 'Brak ogłaszania wyniku formularza.');
+assert.ok(html.includes('aria-labelledby="plan-heading"'), 'Wynik musi mieć nazwę regionu.');
+assert.ok(html.includes('aria-labelledby="dialog-title"'), 'Okno musi mieć dostępną nazwę.');
+const app = await readFile(new URL('app.js', root), 'utf8');
+assert.ok(app.includes('result.focus()'), 'Wynik musi otrzymać fokus po utworzeniu.');
 console.log('OK: sekcje, odnośniki, pliki i podstawowa semantyka.');

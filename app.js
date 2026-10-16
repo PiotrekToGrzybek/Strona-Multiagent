@@ -108,10 +108,8 @@ function renderTopics() {
   insuranceTopics.forEach((topic) => {
     topicSelect.add(new Option(topic.name, topic.id));
 
-    const card = document.createElement('button');
-    card.type = 'button';
+    const card = document.createElement('article');
     card.className = 'card';
-    card.setAttribute('aria-haspopup', 'dialog');
     // Poniższy szablon używa wyłącznie stałych z tego pliku, bez danych użytkownika.
     card.innerHTML = `
       <svg class="card-icon" viewBox="0 0 32 32" fill="none"
@@ -119,9 +117,12 @@ function renderTopics() {
         aria-hidden="true">${topic.icon}</svg>
       <h3>${topic.name}</h3>
       <p>${topic.short}</p>
-      <span class="card-link">Poznaj zakres <span aria-hidden="true">↗</span></span>
+      <button type="button" class="card-link" aria-haspopup="dialog"
+        aria-label="Poznaj zakres: ${topic.name}">
+        Poznaj zakres <span aria-hidden="true">↗</span>
+      </button>
     `;
-    card.addEventListener('click', () => openTopic(topic));
+    card.querySelector('button').addEventListener('click', () => openTopic(topic));
     cards.append(card);
   });
 }
@@ -134,6 +135,7 @@ function createPlan(event) {
   result.replaceChildren();
 
   const heading = document.createElement('h3');
+  heading.id = 'plan-heading';
   heading.textContent = `Twoja lista: ${topic.name.toLowerCase()}`;
   const introduction = document.createElement('p');
   introduction.textContent = `Twój priorytet: ${priority.toLowerCase()}. Zapytaj doradcę:`;
@@ -196,7 +198,20 @@ document.querySelectorAll('#nav a').forEach((link) => {
   link.addEventListener('click', () => {
     document.querySelector('#nav').classList.remove('open');
     document.querySelector('.menu').setAttribute('aria-expanded', 'false');
+    const target = document.querySelector(link.hash);
+    target.setAttribute('tabindex', '-1');
+    target.focus({ preventScroll: true });
   });
+});
+
+// Escape zwija menu i oddaje fokus przyciskowi, bez pozostawiania go w ukrytej treści.
+document.querySelector('#nav').addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    document.querySelector('#nav').classList.remove('open');
+    const menuButton = document.querySelector('.menu');
+    menuButton.setAttribute('aria-expanded', 'false');
+    menuButton.focus();
+  }
 });
 
 dialog.querySelector('.close').addEventListener('click', () => dialog.close());

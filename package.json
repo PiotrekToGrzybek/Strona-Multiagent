@@ -1,0 +1,13 @@
+{
+  "name": "multiagent-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Responsywna strona Multiagent bez zależności produkcyjnych",
+  "scripts": {
+    "start": "node tools/serve.mjs",
+    "check": "node --check app.js && node --check config.js && node tools/check.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

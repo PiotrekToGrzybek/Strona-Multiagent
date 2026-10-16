@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Multiagent — ubezpieczenia na Twoich zasadach</title>
+    <meta
+      name="description"
+      content="Poznaj ubezpieczenia samochodu, domu, podróży, życia i firmy. Przygotuj listę potrzeb przed rozmową o swojej polisie z Multiagent."
+    />
+    <meta name="theme-color" content="#143d32" />
+    <link rel="icon" href="assets/mark.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="config.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Przejdź do treści</a>
+    <header>
+      <a class="brand" href="#" aria-label="Multiagent — strona główna">
+        <img src="assets/mark.svg" width="38" height="38" alt="" />
+        multiagent
+        <span>ubezpieczenia</span>
+      </a>
+      <button class="menu" aria-controls="nav" aria-expanded="false">
+        Menu
+        <span aria-hidden="true">☰</span>
+      </button>
+      <nav id="nav" aria-label="Główna">
+        <a href="#oferta">Ubezpieczenia</a>
+        <a href="#jak-dzialamy">Jak to działa</a>
+        <a href="#pytania">Pytania i odpowiedzi</a>
+        <a class="button small" href="#dobor">
+          Dobierz ochronę
+          <span aria-hidden="true">↗</span>
+        </a>
+      </nav>
+    </header>
+    <main id="main">
+      <noscript>
+        <p class="wrap">
+          Włącz JavaScript, aby przeglądać szczegóły kategorii i przygotować listę pytań.
+          Tematy do rozmowy: samochód, dom i mieszkanie, życie i zdrowie, podróż,
+          firma oraz ubezpieczenia grupowe. Poradnik i odpowiedzi poniżej są dostępne bez JavaScriptu.
+        </p>
+      </noscript>
+      <section class="hero wrap">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            <span class="dot"></span>
+            Ubezpieczenia. Po ludzku.
+          </p>
+          <h1>
+            Twoje życie.
+            <br />
+            Twoje plany.
+            <br />
+            <em>Twój spokój.</em>
+          </h1>
+          <p class="lead">
+            Samochód, dom, bliscy, własna firma. Zacznij od tego, co jest dla Ciebie ważne — i
+            poznaj możliwości ochrony.
+          </p>
+          <div class="actions">
+            <a class="button" href="#dobor">
+              Znajdź swoje ubezpieczenie
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a class="text-link" href="#oferta">
+              Poznaj ofertę
+              <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+          <p class="hero-note">Przemyślany wybór zaczyna się od dobrej rozmowy.</p>
+        </div>
+        <div class="hero-art">
+          <img
+            src="assets/scene.svg"
+            width="640"
+            height="630"
+            alt="Ilustracja domu, samochodu i zieleni pod ochronnym łukiem"
+          />
+          <div class="art-label">
+            <span aria-hidden="true">✓</span>
+            <div>
+              Blisko tego, co ważne.
+              <small>Na co dzień i na wszelki wypadek.</small>
+            </div>
+          </div>
+          <span class="art-caption">DOBRZE MIEĆ SWÓJ PLAN B.</span>
+        </div>
+      </section>
+      <div class="strip">
+        <div class="wrap">
+          <span>Na drodze</span>
+          <i aria-hidden="true">✳</i>
+          <span>W domu</span>
+          <i aria-hidden="true">✳</i>
+          <span>W podróży</span>
+          <i aria-hidden="true">✳</i>
+          <span>W życiu</span>
+          <i aria-hidden="true">✳</i>
+          <span>W biznesie</span>
+        </div>
+      </div>
+      <section class="wrap section" id="oferta">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">01 / Twoje potrzeby</p>
+            <h2>Co chcesz chronić?</h2>
+          </div>
+          <p>
+            Różne plany wymagają różnej ochrony.
+            <br />
+            Wybierz obszar i poznaj najważniejsze kwestie.
+          </p>
+        </div>
+        <div class="cards" id="offer-cards"></div>
+        <p class="fine">
+          Przedstawione obszary służą omówieniu potrzeb. Dostępność i zakres produktów wymagają
+          potwierdzenia z doradcą. Ochronę, limity i wyłączenia określają warunki konkretnej umowy.
+        </p>
+      </section>
+      <section class="process section" id="jak-dzialamy">
+        <div class="wrap process-grid">
+          <div>
+            <p class="eyebrow">02 / Prościej, krok po kroku</p>
+            <h2>
+              Dobra polisa
+              <br />
+              zaczyna się
+              <br />
+              od Ciebie.
+            </h2>
+            <p>
+              Nie musisz znać wszystkich ubezpieczeniowych pojęć. Warto za to wiedzieć, czego
+              potrzebujesz.
+            </p>
+            <a class="text-link" href="#dobor">Przygotuj się do rozmowy ↗</a>
+          </div>
+          <ol>
+            <li>
+              <span>01</span>
+              <div>
+                <h3>Powiedz, co jest ważne</h3>
+                <p>
+                  Określ, kogo lub co chcesz ubezpieczyć i w jakich sytuacjach potrzebujesz
+                  wsparcia.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span>02</span>
+              <div>
+                <h3>Porównaj zakres, nie tylko cenę</h3>
+                <p>
+                  Sprawdź sumę ubezpieczenia, limity, udział własny oraz zdarzenia, których polisa
+                  nie obejmuje.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span>03</span>
+              <div>
+                <h3>Wybierz świadomie</h3>
+                <p>
+                  Przeczytaj dokumenty i wyjaśnij wątpliwości przed zawarciem umowy. Zachowaj numer
+                  polisy i kontakt do ubezpieczyciela.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+      <section class="wrap section" id="dobor">
+        <div class="planner">
+          <div>
+            <p class="eyebrow">03 / Twój pierwszy krok</p>
+            <h2>
+              Ułóż swój
+              <br />
+              plan ochrony.
+            </h2>
+            <p>
+              Wybierz temat. Przygotujemy krótką listę pytań, którą możesz zabrać na rozmowę o
+              ubezpieczeniu.
+            </p>
+            <p class="fine">Bez rejestracji i podawania danych osobowych.</p>
+          </div>
+          <form id="planner-form">
+            <label for="topic">Co chcesz ubezpieczyć?</label>
+            <select id="topic" name="topic"></select>
+            <label for="priority">Co jest dla Ciebie najważniejsze?</label>
+            <select id="priority" name="priority">
+              <option>Szeroki zakres ochrony</option>
+              <option>Rozsądna składka</option>
+              <option>Pomoc assistance</option>
+              <option>Chcę poznać dostępne możliwości</option>
+            </select>
+            <button class="button" type="submit">
+              Przygotuj listę pytań
+              <span aria-hidden="true">↗</span>
+            </button>
+            <div id="plan-result" tabindex="-1" hidden aria-live="polite"></div>
+          </form>
+        </div>
+      </section>
+      <section class="wrap section faq" id="pytania">
+        <div>
+          <p class="eyebrow">04 / Warto wiedzieć</p>
+          <h2>
+            Jasne pytania.
+            <br />
+            Proste odpowiedzi.
+          </h2>
+        </div>
+        <div>
+          <details>
+            <summary>Czy najtańsza polisa to najlepszy wybór?</summary>
+            <p>
+              Oprócz składki porównaj zakres, sumy ubezpieczenia, limity oraz wyłączenia. Dwie
+              polisy o podobnej nazwie mogą zapewniać różną ochronę.
+            </p>
+          </details>
+          <details>
+            <summary>Jak przygotować się do rozmowy?</summary>
+            <p>
+              Przygotuj obecną polisę, jeśli ją masz, datę końca ochrony i listę swoich potrzeb.
+              Dane osobowe oraz dokumenty przekazuj dopiero uzgodnionym, bezpiecznym kanałem.
+            </p>
+          </details>
+          <details>
+            <summary>Gdzie znajdę szczegóły ochrony?</summary>
+            <p>
+              W polisie i dokumentach produktu, w tym Ogólnych Warunkach Ubezpieczenia (OWU). Przed
+              zawarciem umowy zapoznaj się z limitami, obowiązkami i wyłączeniami odpowiedzialności.
+            </p>
+          </details>
+          <details>
+            <summary>Co zrobić po wystąpieniu szkody?</summary>
+            <p>
+              Zadbaj o bezpieczeństwo, a w razie zagrożenia wezwij odpowiednie służby. Udokumentuj
+              zdarzenie i postępuj zgodnie z instrukcjami swojego ubezpieczyciela. Numer zgłoszenia
+              szkody znajdziesz w dokumentach polisy.
+            </p>
+          </details>
+        </div>
+      </section>
+      <section class="contact wrap" id="kontakt">
+        <div>
+          <p class="eyebrow">Porozmawiajmy o Twoich planach</p>
+          <h2>Spokój ma dobry początek.</h2>
+          <p id="contact-note">Dane kontaktowe biura zostaną udostępnione po ich potwierdzeniu.</p>
+        </div>
+        <div id="contact-links">
+          <a class="button light" href="#dobor">Przygotuj się do rozmowy ↗</a>
+        </div>
+      </section>
+    </main>
+    <footer class="wrap">
+      <div class="footer-top">
+        <a class="brand" href="#">
+          multiagent
+          <span>ubezpieczenia</span>
+        </a>
+        <p>Ochrona dopasowana do życia.</p>
+        <a href="prywatnosc.html">Prywatność</a>
+      </div>
+      <div class="footer-bottom">
+        <span>
+          ©
+          <span id="year">2026</span>
+          Multiagent
+        </span>
+        <span>Materiały mają charakter informacyjny.</span>
+        <a href="#">Wróć na górę ↑</a>
+      </div>
+    </footer>
+    <dialog id="offer-dialog">
+      <button class="close" aria-label="Zamknij szczegóły">×</button>
+      <p class="eyebrow">Poznaj możliwości</p>
+      <h2 id="dialog-title"></h2>
+      <p id="dialog-description"></p>
+      <h3>O co warto zapytać?</h3>
+      <ul id="dialog-questions"></ul>
+      <p class="fine">Zakres zależy od wybranego produktu i warunków ubezpieczyciela.</p>
+      <button class="button" id="choose-topic">Przygotuj listę pytań ↗</button>
+    </dialog>
+  </body>
+</html>
